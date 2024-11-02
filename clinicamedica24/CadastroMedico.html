@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gerenciamento Médico </title>
+   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+
+    <style>
+        body {
+            background: white;
+        }
+
+        .navbar {
+            background: #008080;
+            width: 210px;
+            display: flex;
+            margin-bottom: 35px; 
+            justify-content: center;
+            border-end-end-radius: 90px;
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        .card {
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        .card-custom {
+            background-color: #ffffff; 
+            margin: 15px;
+            border-radius: 15px;
+        }
+
+        .card-header-custom {
+        background-color: #008080; 
+        color: white; 
+        }
+
+        .btn-custom {
+            background-color: #008080; 
+            color: white; 
+            border: none; 
+        }
+
+        .btn-custom:hover {
+            background-color: #006666; 
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="title"> 
+            <h5><strong>  Gerenciamento </strong> </h5></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom">
+                        <h5> Cadastro de Médico </h5>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="nomeMedico">Nome Completo</label>
+                                <input type="text" class="form-control" id="nomeMedico" placeholder="Digite o nome do médico">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailMedico">Email</label>
+                                <input type="email" class="form-control" id="emailMedico" placeholder="Digite o email do médico">
+                            </div>
+                            <div class="form-group">
+                                <label for="crmMedico">CRM</label>
+                                <input type="text" class="form-control" id="crmMedico" placeholder="Digite o CRM do médico">
+                            </div>
+                            <div class="form-group">
+                                <label for="especializacaoMedico">Especialização</label>
+                                <select class="form-control" id="especializacaoMedico">
+                                    <option value="">Selecione uma especialização</option>
+                                    <option value="Alergologia">Alergologia</option>
+                                    <option value="Anestesiologia">Anestesiologia</option>
+                                    <option value="Angiologia">Angiologia</option>
+                                    <option value="Cardiologia">Cardiologia</option>
+                                    <option value="Cirurgia Cardiovascular">Cirurgia Cardiovascular</option>
+                                    <option value="Cirurgia Geral">Cirurgia Geral</option>
+                                    <option value="Cirurgia Pediátrica">Cirurgia Pediátrica</option>
+                                    <option value="Cirurgia Plástica">Cirurgia Plástica</option>
+                                    <option value="Cirurgia Torácica">Cirurgia Torácica</option>
+                                    <option value="Cirurgia Vascular">Cirurgia Vascular</option>
+                                    <option value="Dermatologia">Dermatologia</option>
+                                    <option value="Endocrinologia">Endocrinologia</option>
+                                    <option value="Gastroenterologia">Gastroenterologia</option>
+                                    <option value="Geriatria">Geriatria</option>
+                                    <option value="Ginecologia">Ginecologia</option>
+                                    <option value="Hematologia">Hematologia</option>
+                                    <option value="Infectologia">Infectologia</option>
+                                    <option value="Nefrologia">Nefrologia</option>
+                                    <option value="Neurologia">Neurologia</option>
+                                    <option value="Nutrologia">Nutrologia</option>
+                                    <option value="Obstetrícia">Obstetrícia</option>
+                                    <option value="Oftalmologia">Oftalmologia</option>
+                                    <option value="Oncologia">Oncologia</option>
+                                    <option value="Ortopedia">Ortopedia</option>
+                                    <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+                                    <option value="Pediatria">Pediatria</option>
+                                    <option value="Pneumologia">Pneumologia</option>
+                                    <option value="Psiquiatria">Psiquiatria</option>
+                                    <option value="Radiologia">Radiologia</option>
+                                    <option value="Reumatologia">Reumatologia</option>
+                                    <option value="Urologia">Urologia</option>
+                                </select>
+                            </div>
+
+                        </select>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-custom"><i class="fas fa-plus"></i> Cadastrar</button>
+                        </div>
+                    </div>
+                    </form>
+                    </div>
+
+                </div>
+            </div>
+
+</body>
+</html>
