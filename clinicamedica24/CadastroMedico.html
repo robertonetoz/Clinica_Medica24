@@ -15,8 +15,8 @@
         }
 
         .navbar {
-            background: #008080;
-            width: 210px;
+            background: #000031;
+            width: 220px;
             display: flex;
             margin-bottom: 35px; 
             justify-content: center;
@@ -32,27 +32,49 @@
         .card {
             border-radius: 15px;
             margin: 15px;
+           
         }
 
         .card-custom {
             background-color: #ffffff; 
             margin: 15px;
             border-radius: 15px;
+            
         }
 
         .card-header-custom {
-        background-color: #008080; 
-        color: white; 
+            background-color: #000031; 
+            text-align: center; 
+            max-height: 50px;
+            color: white; 
         }
 
         .btn-custom {
-            background-color: #008080; 
+            background-color: #000031; 
             color: white; 
             border: none; 
         }
 
         .btn-custom:hover {
-            background-color: #006666; 
+            background-color: #000031; 
+        }
+
+        .thumbnail {
+            margin-bottom: 20px; 
+            text-align: center; 
+            margin-right: 20px; 
+        }
+
+        .thumbnail img {
+            max-height: 150px; 
+            width: auto; 
+            border-radius: 20px; 
+        }
+
+        .thumbnail-container {
+            display: flex; 
+            align-items: flex-start;
+            justify-content: space-around; 
         }
         
     </style>
@@ -61,33 +83,52 @@
 
     <div class="navbar">
         <div class="title"> 
-            <h5><strong>  Gerenciamento </strong> </h5></div>
+            <h5><strong>GERENCIAMENTO</strong></h5>
+        </div>
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-6">
+                <div class="thumbnail-container">
+                    <div class="thumbnail">
+                        <img src="https://i.pinimg.com/564x/db/1e/e0/db1ee06e13dc47188f66c35d3aeabb88.jpg" class="img-fluid">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://i.pinimg.com/564x/3b/7f/5d/3b7f5dde28f9b252b3d69c77342cfbc0.jpg" class="img-fluid">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://i.pinimg.com/564x/79/4b/84/794b84a46fb138acb8587edf614720d2.jpg" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
                 <div class="card card-custom">
                     <div class="card-header card-header-custom">
-                        <h5> Cadastro de Médico </h5>
+                        <h5>Cadastro de Médico</h5>
                     </div>
+
                     <div class="card-body">
                         <form>
                             <div class="form-group">
-                                <label for="nomeMedico">Nome Completo</label>
-                                <input type="text" class="form-control" id="nomeMedico" placeholder="Digite o nome do médico">
+                                <label>Nome Completo</label>
+                                <input type="text" class="form-control">
                             </div>
+
                             <div class="form-group">
-                                <label for="emailMedico">Email</label>
-                                <input type="email" class="form-control" id="emailMedico" placeholder="Digite o email do médico">
+                                <label>Email</label>
+                                <input type="email" class="form-control">
                             </div>
+
                             <div class="form-group">
-                                <label for="crmMedico">CRM</label>
-                                <input type="text" class="form-control" id="crmMedico" placeholder="Digite o CRM do médico">
+                                <label>CRM</label>
+                                <input type="text" class="form-control">
                             </div>
+
                             <div class="form-group">
                                 <label for="especializacaoMedico">Especialização</label>
-                                <select class="form-control" id="especializacaoMedico">
+                                <select class="form-control">
                                     <option value="">Selecione uma especialização</option>
                                     <option value="Alergologia">Alergologia</option>
                                     <option value="Anestesiologia">Anestesiologia</option>
@@ -122,17 +163,15 @@
                                     <option value="Urologia">Urologia</option>
                                 </select>
                             </div>
-
-                        </select>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-custom"><i class="fas fa-plus"></i> Cadastrar</button>
-                        </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-custom"><i class="fas fa-plus"></i> Cadastrar</button>
+                            </div>
+                        </form>
                     </div>
-                    </form>
-                    </div>
-
                 </div>
             </div>
+        </div>
+    </div>
 
 </body>
 </html>
