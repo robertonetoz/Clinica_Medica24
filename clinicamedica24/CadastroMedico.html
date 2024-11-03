@@ -21,18 +21,67 @@
 
         .navbar {
             background: #000031;
-            width: 220px;
             display: flex;
+            width: 550px;
             margin-bottom: 35px; 
-            justify-content: center;
-            border-end-end-radius: 90px;
+            justify-content: space-between;
+            border-end-end-radius: 99px;
         }
+
+        .navbar button {
+            background-color: #000031; 
+            color: white; 
+            border: 3px solid #ffffff; 
+            border-radius: 20px;
+            padding: 8px 12px;
+            margin: 0 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+
+        .navbar button:hover {
+            background-color: #000031;
+            transform: translateY(-2px);
+        }
+        
+
+
+        .form-control {
+            background-color: white;
+            color: black;
+            border: 3px solid #000031;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: #000031;
+            color: white;
+            border-color: #ffffff;
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        .form-check-label a {
+            color: #000031;
+        }
+
+        .form-check-label a:hover {
+            text-decoration: underline;
+        }
+
+
 
         .title {
             font-size: 25px;
             font-weight: bold;
             color: aliceblue;
         }
+
+
 
         .card {
             border-radius: 15px;
@@ -44,6 +93,8 @@
             background-color: #ffffff; 
             margin: 15px;
             border-radius: 15px;
+            max-width: 900px;
+            max-height: 600px;
             
         }
 
@@ -60,10 +111,7 @@
             border: none; 
         }
 
-        .btn-custom:hover {
-            background-color: #000031; 
-        }
-
+        
         .thumbnail {
             margin-bottom: 20px; 
             text-align: center; 
@@ -84,15 +132,23 @@
 
 
         
+        
     </style>
 </head>
 <body>
 
     <div class="navbar">
         <div class="title"> 
-            <h5><strong>GERENCIAMENTO</strong></h5>
+            <h4><strong> GERENCIAMENTO MÉDICO</strong></h4>
         </div>
+        <div style="display: inline-block; margin-right: 60px;">
+            <button onclick="window.location.href='/rota'"><i class="fas fa-home"></i> Home </button>
     </div>
+    </div>
+
+
+
+    
 
     <div class="container">
         <h1> </h1>
@@ -174,7 +230,12 @@
                                     <option value="Reumatologia">Reumatologia</option>
                                     <option value="Urologia">Urologia</option>
                                 </select>
-                            </div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" id="terms">
+                                    <label class="form-check-label" for="terms">
+                                        Concordo com os <a href="#"> Termos de Serviço </a> e  <a href="#"> Políticas de Privacidade</a>
+                                    </label>
+                                </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-custom"><i class="fas fa-plus"></i> Cadastrar</button>
                             </div>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gerenciamento Funcionários </title>
+   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #E8F1F2, #A3C1DA);
+        }
+
+        .navbar {
+            background: #000031;
+            display: flex;
+            width: 650px;
+            margin-bottom: 35px; 
+            justify-content: space-between;
+            border-end-end-radius: 99px;
+        }
+
+        .navbar button {
+            background-color: #000031; 
+            color: white; 
+            border: 3px solid #ffffff; 
+            border-radius: 20px;
+            padding: 8px 12px;
+            margin: 0 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+
+        .navbar button:hover {
+            background-color: #000031;
+            transform: translateY(-2px);
+        }
+        
+
+
+
+
+        .title {
+            font-size: 25px;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+
+
+        .card {
+            border-radius: 15px;
+            margin: 15px;
+           
+        }
+
+        .card-custom {
+            background-color: #ffffff; 
+            margin: 15px;
+            border-radius: 25px;
+            max-width: 900px;
+            max-height: 600px;
+            
+        }
+
+        .card-header-custom {
+            background-color: #000031; 
+            text-align: center; 
+            max-height: 50px;
+            color: white; 
+        }
+
+        .btn-custom {
+            background-color: #000031; 
+            color: white; 
+            border: none; 
+        }
+
+        
+        .thumbnail {
+            margin-bottom: 20px; 
+            text-align: center; 
+            margin-right: 20px; 
+        }
+
+        .thumbnail img {
+            max-height: 150px; 
+            width: auto; 
+            border-radius: 20px; 
+        }
+
+        .thumbnail-container {
+            display: flex; 
+            align-items: flex-start;
+            justify-content: space-around; 
+        }
+
+
+
+
+        .form-control {
+            background-color: white;
+            color: black;
+            border: 3px solid #000031;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: 14px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: #000031;
+            color: white;
+            border-color: #ffffff;
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        .form-check-label a {
+            color: #000031;
+        }
+
+        .form-check-label a:hover {
+            text-decoration: underline;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="title"> 
+            <h4><strong> GERENCIAMENTO FUNCIONÁRIOS </strong></h4>
+        </div>
+        <div style="display: inline-block; margin-right: 60px;">
+            <button onclick="window.location.href='/rota'"><i class="fas fa-home"></i> Home </button>
+    </div>
+    </div>
+
+
+
+    
+
+
+
+
+
+            <div class="col-md-6">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom">
+                        <h5> Cadastro Funcionários </h5>
+                    </div>
+
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label> Nome Completo: </label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label> RG: </label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label> Orgão Emissor: </label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label> CPF: </label>
+                                <input type="text" class="form-control">
+                            </div>
+                            
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" id="terms">
+                                    <label class="form-check-label" for="terms">
+                                        Concordo com os <a href="#"> Termos de Serviço </a> e  <a href="#"> Políticas de Privacidade</a>
+                                    </label>
+                                </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-custom"><i class="fas fa-plus"></i> Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
