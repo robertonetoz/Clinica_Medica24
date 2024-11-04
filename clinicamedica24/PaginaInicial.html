@@ -1,125 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinica Medica</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        .alert-custom {
-            display: none;
-        }
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clinica Medica</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-        .navbar-text{
-            text-align: right;
-        }
-    </style>
-</head>
+        <style>
+
+
+            body {
+                font-family: 'Roboto', sans-serif;
+                background: linear-gradient( #A3C1DA, #E8F1F2); 
+            }
+            nav {
+                box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+            }
+            .card {
+                box-shadow: 0 4px 6px 0 rgba(0,0,0,.1);
+            }
+        </style>
+    </head>
 
 <body>
-    <p class="navbar-text navbar-right">Home<a href="#" class="navbar-link">ADM</a></p>
- 
-    <div class="jumbotron">
-        <h1>Clinica Medica</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil nemo molestias laboriosam iste repudiandae delectus fuga, aliquam, reiciendis ut a veniam aut ex perferendis voluptatum ab modi sequi sunt beatae?</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000031;">
+            <img src="https://cdn-icons-png.freepik.com/512/16848/16848858.png" alt="icon clinic" height="70px">  
+    
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" style="color: white; font-weight: bold;" href="#">Home <span class="sr-only">(página atual)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="#">Seção para pacientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="#">Cadastros</a>
+                </li>
+                </ul>
+    
+                <div class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ADM</button>
+                </div>
+            </div>
+            </nav> 
+    </header>
+
+    <div class="jumbotron" style="background: linear-gradient( #A3C1DA, #E8F1F2)">
+        <h1 class="display-4">Clinica Médica</h1>
+        <p class="lead">Este é um simples componente jumbotron para chamar mais atenção a um determinado conteúdo ou informação.</p>
+        <hr class="my-4">
+        <p>Ele usa classes utilitárias para tipografia e espaçamento de conteúdo, dentro do maior container.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
       </div>
-      <div class="container mt-5">
-        <form id="formCadastroMedico">
-            <div class="form-group">
-                <label for="nomeMedico">Nome Completo</label>
-                <input type="text" class="form-control" id="nomeMedico" placeholder="Digite o nome do médico" required>
-            </div>
-            <div class="form-group">
-                <label for="emailMedico">Email</label>
-                <input type="email" class="form-control" id="emailMedico" placeholder="Digite o email do médico" required>
-            </div>
-            <div class="form-group">
-                <label for="crmMedico">CRM</label>
-                <input type="text" class="form-control" id="crmMedico" placeholder="Digite o CRM do médico" required>
-            </div>
-            <div class="form-group">
-                <label for="especializacaoMedico">Especialização</label>
-                <select class="form-control" id="especializacaoMedico" required>
-                    <option value="">Selecione uma especialização</option>
-                    <option value="Alergologia">Alergologia</option>
-                    <option value="Anestesiologia">Anestesiologia</option>
-                    <option value="Angiologia">Angiologia</option>
-                    <option value="Cardiologia">Cardiologia</option>
-                    <option value="Cirurgia Cardiovascular">Cirurgia Cardiovascular</option>
-                    <option value="Cirurgia Geral">Cirurgia Geral</option>
-                    <option value="Cirurgia Pediátrica">Cirurgia Pediátrica</option>
-                    <option value="Cirurgia Plástica">Cirurgia Plástica</option>
-                    <option value="Cirurgia Torácica">Cirurgia Torácica</option>
-                    <option value="Cirurgia Vascular">Cirurgia Vascular</option>
-                    <option value="Dermatologia">Dermatologia</option>
-                    <option value="Endocrinologia">Endocrinologia</option>
-                    <option value="Gastroenterologia">Gastroenterologia</option>
-                    <option value="Geriatria">Geriatria</option>
-                    <option value="Ginecologia">Ginecologia</option>
-                    <option value="Hematologia">Hematologia</option>
-                    <option value="Infectologia">Infectologia</option>
-                    <option value="Nefrologia">Nefrologia</option>
-                    <option value="Neurologia">Neurologia</option>
-                    <option value="Nutrologia">Nutrologia</option>
-                    <option value="Obstetrícia">Obstetrícia</option>
-                    <option value="Oftalmologia">Oftalmologia</option>
-                    <option value="Oncologia">Oncologia</option>
-                    <option value="Ortopedia">Ortopedia</option>
-                    <option value="Otorrinolaringologia">Otorrinolaringologia</option>
-                    <option value="Pediatria">Pediatria</option>
-                    <option value="Pneumologia">Pneumologia</option>
-                    <option value="Psiquiatria">Psiquiatria</option>
-                    <option value="Radiologia">Radiologia</option>
-                    <option value="Reumatologia">Reumatologia</option>
-                    <option value="Urologia">Urologia</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Cadastrar</button>
-        </form>
 
-        <!-- Alerta de sucesso -->
-        <div id="alertSucesso" class="alert alert-success alert-custom mt-4">
-            Médico cadastrado com sucesso!
+        <div class="text-center" style="margin-top: 50px;">
+            <h2>Cadastros</h2>
         </div>
 
-        <!-- Alerta de erro -->
-        <div id="alertErro" class="alert alert-danger alert-custom mt-4">
-            Por favor, preencha todos os campos obrigatórios!
+        <div class="d-flex justify-content-center align-items-center" style="min-height: 50vh; margin-top: 50px; gap: 3rem;">
+            <div class="card" style="width: 25rem; border-radius: 20px;">
+                <img class="card-img-top" src="privado/img/medicoCadas.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Título do card 1</h5>
+                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                    <a href="#" class="btn btn-primary">Visitar</a>
+                </div>
+            </div>
+        
+            <div class="card" style="width: 25rem; border-radius: 20px;">
+                <img class="card-img-top" src="privado/img/funcionariosCadas.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Título do card 2</h5>
+                    <p class="card-text">Outro exemplo de texto rápido para construir o título do card e preencher o conteúdo do card.</p>
+                    <a href="#" class="btn btn-primary">Visitar</a>
+                </div>
+            </div>
         </div>
-    </div>
+<br> <br> <br>
 
-    <!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <div class="text-center" style="margin-top: 50px;">
+            <h2>Médicos Cadastrados</h2>
+        </div>
 
-    <script>
-        document.getElementById('formCadastroMedico').addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
+        <div class="d-flex justify-content-center align-items-center" style="min-height: 50vh; margin-top: 50px; margin-block-end: 100px;">
+            <div class="card" style="width: 25rem; border-radius: 20px;">
+                <img class="card-img-top" src="privado/img/listademedicos.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Título do card 1</h5>
+                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                    <a href="#" class="btn btn-primary">Visitar</a>
+                </div>
+            </div>
+            
+    <footer>
+        
+    </footer>        
 
-            // Coleta os valores dos campos
-            var nome = document.getElementById('nomeMedico').value.trim();
-            var email = document.getElementById('emailMedico').value.trim();
-            var crm = document.getElementById('crmMedico').value.trim();
-            var especializacao = document.getElementById('especializacaoMedico').value;
-
-            // Verifica se todos os campos foram preenchidos
-            if (nome === "" || email === "" || crm === "" || especializacao === "") {
-                // Mostra mensagem de erro
-                document.getElementById('alertErro').style.display = 'block';
-                document.getElementById('alertSucesso').style.display = 'none';
-            } else {
-                // Mostra mensagem de sucesso e limpa os campos
-                document.getElementById('alertSucesso').style.display = 'block';
-                document.getElementById('alertErro').style.display = 'none';
-
-                // Limpa os campos do formulário
-                document.getElementById('formCadastroMedico').reset();
-            }
-        });
-    </script>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
 </body>
+
 </html>
