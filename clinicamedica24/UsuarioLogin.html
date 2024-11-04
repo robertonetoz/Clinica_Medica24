@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gerenciamento Médico </title>
+   
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #E8F1F2, #A3C1DA);
+        }
+        .form-control {
+            border: 3px solid #000031;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .form-control:focus {
+            background-color: #000031;
+            color: white;
+            border-color: #ffffff;
+            outline: none;
+            transform: scale(1.02);
+        }
+        .btn-custom {
+            background-color: #000031; 
+            color: white; 
+        }
+        .card-custom {
+            max-width: 500px;
+            margin: 30px auto;
+            border-radius: 15px;
+        }
+        .card-header-custom {
+            background-color: #000031; 
+            color: white;
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .form-check-label a {
+            color: #000031;
+        }
+        .form-check-label a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="card card-custom shadow">
+            <div class="card-header card-header-custom">
+                <h5>Login</h5>
+            </div>
+            <div class="card-body">
+                <form onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            Concordo com os <a href="#">Termos de Serviço</a> e <a href="#">Políticas de Privacidade</a>
+                        </label>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-custom btn-block"><i class="fas fa-plus"></i> Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const terms = document.getElementById("terms").checked;
+            
+            if (name && email && password && terms) {
+                // Redireciona para a tela inicial
+                window.location.href = "tela-inicial.html";
+                return false; // Previne o envio real do formulário
+            } else {
+                alert("Por favor, preencha todos os campos e aceite os termos.");
+                return false;
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
