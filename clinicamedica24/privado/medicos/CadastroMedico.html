@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento Médico</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        /* Estilos existentes */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background: linear-gradient(to bottom, #E8F1F2, #A3C1DA);
+        }
+        .navbar {
+            background: #000031;
+            display: flex;
+            width: 550px;
+            margin-bottom: 35px; 
+            justify-content: space-between;
+            border-end-end-radius: 99px;
+        }
+        .navbar button {
+            background-color: #000031; 
+            color: white; 
+            border: 3px solid #ffffff; 
+            border-radius: 20px;
+            padding: 8px 12px;
+            margin: 0 8px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .navbar button:hover {
+            background-color: #000031;
+            transform: translateY(-2px);
+        }
+        .form-control {
+            background-color: white;
+            color: black;
+            border: 3px solid #000031;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .form-control:focus {
+            background-color: #000031;
+            color: white;
+            border-color: #ffffff;
+            outline: none;
+            transform: scale(1.02);
+        }
+        .form-check-label a {
+            color: #000031;
+        }
+        .form-check-label a:hover {
+            text-decoration: underline;
+        }
+        .title {
+            font-size: 25px;
+            font-weight: bold;
+            color: aliceblue;
+        }
+        .card {
+            border-radius: 15px;
+            margin: 15px;
+        }
+        .card-custom {
+            background-color: #ffffff; 
+            margin: 15px;
+            border-radius: 15px;
+            max-width: 900px;
+            max-height: 600px;
+        }
+        .card-header-custom {
+            background-color: #000031; 
+            text-align: center; 
+            max-height: 50px;
+            color: white; 
+        }
+        .btn-custom {
+            background-color: #000031; 
+            color: white; 
+            border: none; 
+        }
+        .thumbnail {
+            margin-bottom: 20px; 
+            text-align: center; 
+            margin-right: 20px; 
+        }
+        .thumbnail img {
+            max-height: 150px; 
+            width: auto; 
+            border-radius: 20px; 
+        }
+        .thumbnail-container {
+            display: flex; 
+            align-items: flex-start;
+            justify-content: space-around; 
+        }
+        .medicos-list {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="title"> 
+            <h4><strong>GERENCIAMENTO MÉDICO</strong></h4>
+        </div>
+        <div style="display: inline-block; margin-right: 60px;">
+            <button onclick="window.location.href='tela-inicial.html'"><i class="fas fa-home"></i> Home </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="thumbnail-container">
+                    <!-- Thumbnails -->
+                    <div class="thumbnail">
+                        <img src="https://i.pinimg.com/564x/db/1e/e0/db1ee06e13dc47188f66c35d3aeabb88.jpg" class="img-fluid">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://i.pinimg.com/564x/3b/7f/5d/3b7f5dde28f9b252b3d69c77342cfbc0.jpg" class="img-fluid">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://i.pinimg.com/564x/79/4b/84/794b84a46fb138acb8587edf614720d2.jpg" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom">
+                        <h5>Cadastro de Médico</h5>
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="cadastrarMedico(event)">
+                            <div class="form-group">
+                                <label>Nome Completo</label>
+                                <input type="text" id="nome" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>CRM</label>
+                                <input type="text" id="crm" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="especializacaoMedico">Especialização</label>
+                                <select id="especializacao" class="form-control">
+                                    <option value="">Selecione uma especialização</option>
+                                    <option value="Alergologia">Alergologia</option>
+                                    <option value="Anestesiologia">Anestesiologia</option>
+                                    <option value="Angiologia">Angiologia</option>
+                                    <option value="Cardiologia">Cardiologia</option>
+                                    <option value="Cirurgia Cardiovascular">Cirurgia Cardiovascular</option>
+                                    <option value="Cirurgia Geral">Cirurgia Geral</option>
+                                    <option value="Cirurgia Pediátrica">Cirurgia Pediátrica</option>
+                                    <option value="Cirurgia Plástica">Cirurgia Plástica</option>
+                                    <option value="Cirurgia Torácica">Cirurgia Torácica</option>
+                                    <option value="Cirurgia Vascular">Cirurgia Vascular</option>
+                                    <option value="Dermatologia">Dermatologia</option>
+                                    <option value="Endocrinologia">Endocrinologia</option>
+                                    <option value="Gastroenterologia">Gastroenterologia</option>
+                                    <option value="Geriatria">Geriatria</option>
+                                    <option value="Ginecologia">Ginecologia</option>
+                                    <option value="Hematologia">Hematologia</option>
+                                    <option value="Infectologia">Infectologia</option>
+                                    <option value="Nefrologia">Nefrologia</option>
+                                    <option value="Neurologia">Neurologia</option>
+                                    <option value="Nutrologia">Nutrologia</option>
+                                    <option value="Obstetrícia">Obstetrícia</option>
+                                    <option value="Oftalmologia">Oftalmologia</option>
+                                    <option value="Oncologia">Oncologia</option>
+                                    <option value="Ortopedia">Ortopedia</option>
+                                    <option value="Otorrinolaringologia">Otorrinolaringologia</option>
+                                    <option value="Pediatria">Pediatria</option>
+                                    <option value="Pneumologia">Pneumologia</option>
+                                    <option value="Psiquiatria">Psiquiatria</option>
+                                    <option value="Radiologia">Radiologia</option>
+                                    <option value="Reumatologia">Reumatologia</option>
+                                    <option value="Urologia">Urologia</option>
+                                </select>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-custom"><i class="fas fa-plus"></i> Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="medicos-list">
+            <h5>Médicos Cadastrados:</h5>
+            <ul id="listaMedicos" class="list-group">
+                <!-- Médicos serão adicionados aqui -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirmação de Cadastro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Médico cadastrado com sucesso!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const medicos = [];
+
+        function cadastrarMedico(event) {
+            event.preventDefault();
+
+            // Obter dados do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const crm = document.getElementById('crm').value;
+            const especializacao = document.getElementById('especializacao').value;
+
+            // Criar objeto médico
+            const medico = { nome, email, crm, especializacao };
+            medicos.push(medico);
+
+            // Limpar o formulário
+            document.querySelector('form').reset();
+
+            // Atualizar a lista de médicos
+            atualizarListaMedicos();
+
+            // Mostrar modal de confirmação
+            $('#confirmModal').modal('show');
+        }
+
+        function atualizarListaMedicos() {
+            const listaMedicos = document.getElementById('listaMedicos');
+            listaMedicos.innerHTML = ''; // Limpar lista existente
+
+            medicos.forEach((medico, index) => {
+                const li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+                li.textContent = `${medico.nome} - ${medico.email} - ${medico.crm} - ${medico.especializacao}`;
+
+                // Botão de Editar
+                const editButton = document.createElement('button');
+                editButton.className = 'btn btn-warning btn-sm';
+                editButton.textContent = 'Editar';
+                editButton.onclick = () => editarMedico(index);
+                li.appendChild(editButton);
+
+                // Botão de Excluir
+                const deleteButton = document.createElement('button');
+                deleteButton.className = 'btn btn-danger btn-sm';
+                deleteButton.textContent = 'Excluir';
+                deleteButton.onclick = () => excluirMedico(index);
+                li.appendChild(deleteButton);
+
+                listaMedicos.appendChild(li);
+            });
+        }
+
+        function editarMedico(index) {
+            const medico = medicos[index];
+            document.getElementById('nome').value = medico.nome;
+            document.getElementById('email').value = medico.email;
+            document.getElementById('crm').value = medico.crm;
+            document.getElementById('especializacao').value = medico.especializacao;
+
+            // Remover médico da lista para atualizar
+            medicos.splice(index, 1);
+            atualizarListaMedicos();
+        }
+
+        function excluirMedico(index) {
+            medicos.splice(index, 1);
+            atualizarListaMedicos();
+        }
+    </script>
+
+</body>
+</html>
