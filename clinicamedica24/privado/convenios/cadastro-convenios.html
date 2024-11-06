@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Cadastro de Convênios</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Faixa restrita -->
+<div class="alert alert-danger text-center" role="alert">
+    Acesso restrito - Autorização e autenticação necessárias
+</div>
+<!-- Barra de navegação -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CliniMedical - saúde e bem estar</a>
+    <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-target="#navbarNavDropdown" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   href="#" id="configuracoesDropdown" role="button">
+                    Configurações
+                </a>
+                <div aria-labelledby="configuracoesDropdown" class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Especializações</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Listagem</a>
+                    <a class="dropdown-item" href="#">Cadastro</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Convênios</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Listagem</a>
+                    <a class="dropdown-item" href="#">Cadastro</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Perfis</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Listagem</a>
+                    <a class="dropdown-item" href="#">Cadastro</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   href="#" id="funcionariosDropdown" role="button">
+                    Funcionários
+                </a>
+                <div aria-labelledby="funcionariosDropdown" class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Listagem</a>
+                    <a class="dropdown-item" href="#">Cadastro</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   href="#"
+                   id="pacientesDropdown" role="button">
+                    Pacientes
+                </a>
+                <div aria-labelledby="pacientesDropdown" class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Listagem</a>
+                    <a class="dropdown-item" href="#">Cadastro</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown"
+                   href="#"
+                   id="consultasDropdown" role="button">
+                    Consultas
+                </a>
+                <div aria-labelledby="consultasDropdown" class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Listagem</a>
+                    <a class="dropdown-item" href="#">Cadastro</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Sair</a>
+            </li>
+        </ul>
+    </div>
+</nav><!-- Contêiner de alertas -->
+<div class="container mt-3">
+    <div class="alert alert-success" id="alert-success" role="alert">
+        Operação realizada com sucesso!
+    </div>
+    <div class="alert alert-danger" id="alert-error" role="alert">
+        Ocorreu um erro. Tente novamente.
+    </div>
+</div>
+<div class="container mt-5">
+    <h2>Cadastro de Convênios</h2>
+    <form>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input class="form-control" id="nome" placeholder="Digite o nome do convênio" type="text">
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea class="form-control" id="descricao" placeholder="Digite a descrição do convênio"
+                      rows="3"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button class="btn btn-secondary" type="reset">Cancelar</button>
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

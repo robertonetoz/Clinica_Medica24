@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gerenciamento Médico </title>
+   
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(to bottom, #E8F1F2, #A3C1DA);
+        }
+        .form-control {
+            border: 3px solid #000031;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .form-control:focus {
+            background-color: #000031;
+            color: white;
+            border-color: #ffffff;
+            outline: none;
+            transform: scale(1.02);
+        }
+        .btn-custom {
+            background-color: #000031; 
+            color: white; 
+        }
+        .card-custom {
+            max-width: 800px;
+            margin: 30px auto;
+            border-radius: 15px;
+        }
+        .card-header-custom {
+            background-color: #000031; 
+            color: white;
+            text-align: center;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        .form-check-label a {
+            color: #000031;
+        }
+        .form-check-label a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="card card-custom shadow">
+            <div class="card-header card-header-custom">
+                <h5>Login</h5>
+            </div>
+            <div class="card-body">
+                <form onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Funcionário
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="cadastrarFuncionario" type="checkbox">
+                                        <label class="form-check-label" for="cadastrarFuncionario">Cadastrar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="lerFuncionario" type="checkbox">
+                                        <label class="form-check-label" for="lerFuncionario">Ler</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="atualizarFuncionario" type="checkbox">
+                                        <label class="form-check-label" for="atualizarFuncionario">Atualizar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="deletarFuncionario" type="checkbox">
+                                        <label class="form-check-label" for="deletarFuncionario">Deletar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="listarFuncionario" type="checkbox">
+                                        <label class="form-check-label" for="listarFuncionario">Listar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Paciente
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="cadastrarPaciente" type="checkbox">
+                                        <label class="form-check-label" for="cadastrarPaciente">Cadastrar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="lerPaciente" type="checkbox">
+                                        <label class="form-check-label" for="lerPaciente">Ler</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="atualizarPaciente" type="checkbox">
+                                        <label class="form-check-label" for="atualizarPaciente">Atualizar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="deletarPaciente" type="checkbox">
+                                        <label class="form-check-label" for="deletarPaciente">Deletar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="listarPaciente" type="checkbox">
+                                        <label class="form-check-label" for="listarPaciente">Listar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Consulta
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="cadastrarConsulta" type="checkbox">
+                                        <label class="form-check-label" for="cadastrarConsulta">Cadastrar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="lerConsulta" type="checkbox">
+                                        <label class="form-check-label" for="lerConsulta">Ler</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="atualizarConsulta" type="checkbox">
+                                        <label class="form-check-label" for="atualizarConsulta">Atualizar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="deletarConsulta" type="checkbox">
+                                        <label class="form-check-label" for="deletarConsulta">Deletar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="listarConsulta" type="checkbox">
+                                        <label class="form-check-label" for="listarConsulta">Listar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Especialidade
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="cadastrarEspecialidade" type="checkbox">
+                                        <label class="form-check-label" for="cadastrarEspecialidade">Cadastrar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="lerEspecialidade" type="checkbox">
+                                        <label class="form-check-label" for="lerEspecialidade">Ler</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="atualizarEspecialidade" type="checkbox">
+                                        <label class="form-check-label" for="atualizarEspecialidade">Atualizar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="deletarEspecialidade" type="checkbox">
+                                        <label class="form-check-label" for="deletarEspecialidade">Deletar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="listarEspecialidade" type="checkbox">
+                                        <label class="form-check-label" for="listarEspecialidade">Listar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Convênio
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="cadastrarConvenio" type="checkbox">
+                                        <label class="form-check-label" for="cadastrarConvenio">Cadastrar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="lerConvenio" type="checkbox">
+                                        <label class="form-check-label" for="lerConvenio">Ler</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="atualizarConvenio" type="checkbox">
+                                        <label class="form-check-label" for="atualizarConvenio">Atualizar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="deletarConvenio" type="checkbox">
+                                        <label class="form-check-label" for="deletarConvenio">Deletar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="listarConvenio" type="checkbox">
+                                        <label class="form-check-label" for="listarConvenio">Listar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Prontuário
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="cadastrarProntuario" type="checkbox">
+                                        <label class="form-check-label" for="cadastrarProntuario">Cadastrar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="lerProntuario" type="checkbox">
+                                        <label class="form-check-label" for="lerProntuario">Ler</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="atualizarProntuario" type="checkbox">
+                                        <label class="form-check-label" for="atualizarProntuario">Atualizar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="deletarProntuario" type="checkbox">
+                                        <label class="form-check-label" for="deletarProntuario">Deletar</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" id="listarProntuario" type="checkbox">
+                                        <label class="form-check-label" for="listarProntuario">Listar</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Salvar</button>
+                    <button class="btn btn-secondary" type="reset">Cancelar</button>
+                </form>
+            </div>
+
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            Concordo com os <a href="#">Termos de Serviço</a> e <a href="#">Políticas de Privacidade</a>
+                        </label>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-custom btn-block"><i class="fas fa-plus"></i> Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const terms = document.getElementById("terms").checked;
+            
+            if (name && email && password && terms) {
+                // Redireciona para a tela inicial
+                window.location.href = "tela-inicial.html";
+                return false; // Previne o envio real do formulário
+            } else {
+                alert("Por favor, preencha todos os campos e aceite os termos.");
+                return false;
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
