@@ -1,222 +1,250 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Médica</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title> Cadastro Médico </title>
+   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
+
     <style>
         body {
             font-family: 'Times New Roman', Times, serif;
-            background: linear-gradient(#A3C1DA, #E8F1F2);
+            background: url(https://e0.pxfuel.com/wallpapers/67/994/desktop-wallpaper-blue-mountains-horizon-nature.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            color: #fff;
         }
-        
-        .custom-header {
-            background-color: #111157;
-            color: #ffffff;
-            padding: 15px 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 0 0 30px 30px;
-        }
-        
-        .custom-header .navbar-nav .nav-link {
-            color: #ffffff !important;
-            font-weight: 500;
-            margin-right: 15px;
-            transition: color 0.3s;
-        }
-        
-        .custom-header .navbar-nav .nav-link:hover {
-            color: #5059db !important;
-        }
-    
-        .custom-header .navbar-brand {
-            font-size: 28px;
-            font-weight: bold;
+
+        .box {
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 8px;
+            min-height: 70vh;
+            position: relative;
+            z-index: 1;
+            margin-top: 50px;
         }
-    
-        .custom-header .navbar-brand i {
-            font-size: 32px;
-            color: #ffffff;
+
+        .container {
+            width: 550px; 
+            display: flex;
+            flex-direction: column;
+            padding: 0 15px;
         }
-    
-        .custom-header .btn {
-            background-color: #5059db;
-            color: #ffffff;
-            border-radius: 20px;
-            padding: 8px 20px;
+
+        .card-custom {
+            background: rgba(300, 300, 300, 0.2); 
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); 
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header-custom {
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            border-bottom: none;
+            background: transparent;
+            position: relative;
+        }
+
+        .card-header-custom h5 {
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .card-header-custom h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #00b5a7; 
+        }
+
+        .form-control {
+            height: 45px;
+            border: none;
+            border-radius: 30px;
+            padding-left: 42px;
+            background: rgba(255, 255, 255, 0.2); 
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.7);
+            border-color: rgba(0, 255, 255, 0.7);
+        }
+
+        .form-control::placeholder {
+            color: #fff;
+        }
+
+        .form-check-label, .form-group label, .form-check-label a {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .form-check-input {
             margin-right: 10px;
-            font-size: 15px; 
-            font-weight: 600; 
-            transition: background-color 0.3s;
-        }
-    
-        .custom-header .btn:hover {
-            background-color: #3037a8;
-        }
-        
-        .custom-header .logout-link {
-            color: #ffffff;
-            background-color: #ff0000;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 600; 
-            transition: background-color 0.3s;
-        }
-    
-        .custom-header .logout-link:hover {
-            background-color: #ff4d4d;
         }
 
-        .intro-section {
-            padding-left: 20px;
+        .btn-custom {
+            border: 2px solid #00b5a7;
+            border-radius: 30px;
+            font-size: 15px;
+            height: 45px;
+            outline: none;
+            width: 100%;
+            background: transparent;
+            color: #00b5a7;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
         }
 
-        .intro-section h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #111157;
+        .btn-custom:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #00a2e8, #00b5a7);
+            color: #fff;
         }
 
-        .intro-section p {
-            font-size: 1.2rem;
-            color: #333;
-            text-align: justify;
-            margin-left: -10px; /* Jogar um pouco mais para a esquerda */
-            max-width: 800px; /* Limitar a largura */
+        .input-group-text {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
         }
 
-        .social-icons img {
-            width: 35px;
-            margin-right: 15px;
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-container .btn {
+            width: 48%;
         }
     </style>
 </head>
+
 <body>
 
-
-
-    <header class="custom-header">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-heartbeat"> </i> 
-                Med Clinic
-            </a>
-            
-            <div class="collapse navbar-collapse justify-content-center">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#clinica"><i class="fas fa-home"></i> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-clinic-medical"></i> Clínica</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-stethoscope"></i> Especialidades</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="form-inline">
-                <a class="btn" href="#"><i class="fas fa-calendar-alt"></i> Agendamento</a>
-                <a href="UsuarioLogin.html" class="btn">Adm</a>
-                <a href="UsuarioLogin.html" class="logout-link">Sair</a>
-            </div>
-        </nav>
-    </header>
-    
-    <div class="container my-5">
-        <div class="intro-section" id="clinica">
-            <h1>Clínica Médica</h1>
-            <p class="lead">O aplicativo da Clínica Médica foi desenvolvido para proporcionar uma experiência completa e eficiente para pacientes e profissionais de saúde. Com uma interface amigável e intuitiva, o app oferece uma variedade de funcionalidades que facilitam o agendamento de consultas, o acesso a resultados de exames e a comunicação direta com médicos.</p>
-            <hr class="my-4">
-        <p>Nossos meios de contatos.</p>
-        <img src="privado/img/zap icon.png" alt="zap" class="circle" style="width: 30px;">
-        <img src="privado/img/ig icon.png" alt="ig" class="circle" style="width: 30px;">
-        <img src="privado/img/gmail icon.png" alt="gmail" class="circle" style="width: 30px;">
-        <img src="privado/img/linkedin icon.png" alt="linkedin" class="circle" style="width: 30px;">    
-    </div>
-
-
-
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src="" alt="Primeiro Slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Segundo Slide" alt="Segundo Slide">
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Terceiro Slide" alt="Terceiro Slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Próximo</span>
-        </a>
-      </div>
-    
-    <div class="text-center section-title" id="cadastros">
-        <h2>Cadastros</h2>
-    </div>
-    
-    <div class="d-flex justify-content-center">
-        <div class="outer-card">
-            <div class="d-flex justify-content-center align-items-center" style="gap: 3rem;">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="privado/img/medicoCadas.png" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-weight: bold;">Cadastro de Médicos</h5>
-                        <p class="card-text">Registre informações essenciais dos médicos, como especialidade, nome e detalhes de contato.</p>
-                        <a href="CadastroMedico.html" class="btn btn-primary">Entrar</a>
+    <div class="box">
+        <div class="container">
+            <div class="card card-custom shadow">
+                <div class="card-body">
+                    <div class="card-header card-header-custom">
+                        <h5><strong> Cadastro Médico </strong></h5>
                     </div>
-                </div>
-            
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="privado/img/funcionariosCadas.png" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-weight: bold;">Cadastro de Funcionários</h5>
-                        <p class="card-text">Gerencie os dados dos funcionários administrativos e de apoio, incluindo funções, contatos e nome.</p>
-                        <a href="CadastroFuncionario.html" class="btn btn-primary">Entrar</a>
-                    </div>
+                    <form onsubmit="return validateForm()">
+                        
+                        <div class="form-group">
+                            <label for="nomeCompleto"> Nome Completo: </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="nomeCompleto" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email"> Email: </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="crm"> CRM: </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-id-badge"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="crm" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="especializacao"> Especialização: </label>
+                            <select id="especializacao" class="form-control">
+                                <option value=""> Selecione uma especialização </option>
+                                <option value="Alergologia"> Alergologia </option>
+                                <option value="Anestesiologia"> Anestesiologia </option>
+                                <option value="Angiologia"> Angiologia </option>
+                                <option value="Cardiologia"> Cardiologia </option>
+                                <option value="Cirurgia Cardiovascular"> Cirurgia Cardiovascular </option>
+                                <option value="Cirurgia Geral"> Cirurgia Geral </option>
+                                <option value="Cirurgia Pediátrica"> Cirurgia Pediátrica </option>
+                                <option value="Cirurgia Plástica"> Cirurgia Plástica </option>
+                                <option value="Cirurgia Torácica"> Cirurgia Torácica </option>
+                                <option value="Cirurgia Vascular"> Cirurgia Vascular </option>
+                                <option value="Dermatologia"> Dermatologia </option>
+                                <option value="Endocrinologia"> Endocrinologia </option>
+                                <option value="Gastroenterologia"> Gastroenterologia </option>
+                                <option value="Geriatria"> Geriatria </option>
+                                <option value="Ginecologia"> Ginecologia </option>
+                                <option value="Hematologia"> Hematologia </option>
+                                <option value="Infectologia"> Infectologia </option>
+                                <option value="Nefrologia"> Nefrologia </option>
+                                <option value="Neurologia"> Neurologia </option>
+                                <option value="Nutrologia"> Nutrologia </option>
+                                <option value="Obstetrícia"> Obstetrícia /option>
+                                <option value="Oftalmologia"> Oftalmologia </option>
+                                <option value="Oncologia"> Oncologia </option>
+                                <option value="Ortopedia"> Ortopedia </option>
+                                <option value="Otorrinolaringologia"> Otorrinolaringologia </option>
+                                <option value="Pediatria"> Pediatria </option>
+                                <option value="Pneumologia"> Pneumologia </option>
+                                <option value="Psiquiatria"> Psiquiatria </option>
+                                <option value="Radiologia"> Radiologia </option>
+                                <option value="Reumatologia"> Reumatologia </option>
+                                <option value="Urologia"> Urologia </option>
+                            </select>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-custom btn-block"><i class="fas fa-save"></i> Salvar </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <br>
-    
-    <div class="text-center section-title" id="seção-pacientes">
-        <h2>Seção para pacientes</h2>
-    </div>
-    
-    <div class="d-flex justify-content-center">
-        <div class="outer-card">
-            <div class="d-flex justify-content-center align-items-center">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="privado/img/listademedicos.png" alt="Imagem de capa do card">
-                    <div class="card-body">
-                        <h5 class="card-title" style="font-weight: bold;">Médicos Cadastrados</h5>
-                        <p class="card-text">Consulte a lista completa de médicos disponíveis na clínica, incluindo suas especialidades, nomes e informações de contato.</p>
-                        <a href="MedicosCadastrados.html" class="btn btn-primary">Entrar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br><br><br>
-    
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
-    </body>
-    </html>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function validateForm() {
+            var nomeCompleto = document.getElementById("nomeCompleto").value;
+            var email = document.getElementById("email").value;
+            var crm = document.getElementById("crm").value;
+            var especializacao = document.getElementById("especializacao").value;
+
+            if (nomeCompleto === "" || email === "" || crm === "" || especializacao === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>

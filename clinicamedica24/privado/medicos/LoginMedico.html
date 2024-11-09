@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login Médico </title>
+   
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: url(https://e0.pxfuel.com/wallpapers/67/994/desktop-wallpaper-blue-mountains-horizon-nature.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+            position: relative;
+            z-index: 1;
+            margin-top: 50px;
+        }
+
+        .container {
+            width: 550px; 
+            display: flex;
+            flex-direction: column;
+            padding: 0 15px;
+        }
+
+        .card-custom {
+            background: rgba(300, 300, 300, 0.2); 
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); 
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header-custom {
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            border-bottom: none;
+            background: transparent;
+            position: relative;
+        }
+
+        .card-header-custom h5 {
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .card-header-custom h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #00b5a7; 
+        }
+
+        .form-control {
+            height: 45px;
+            border: none;
+            border-radius: 30px;
+            padding-left: 42px;
+            background: rgba(255, 255, 255, 0.2); 
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.7);
+            border-color: rgba(0, 255, 255, 0.7);
+        }
+
+        .form-control::placeholder {
+            color: #fff;
+        }
+
+        .form-check-label, .form-group label, .form-check-label a {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .form-check-input {
+            margin-right: 10px;
+        }
+
+        .btn-custom {
+            border: 2px solid #00b5a7;
+            border-radius: 30px;
+            font-size: 15px;
+            height: 45px;
+            outline: none;
+            width: 100%;
+            background: transparent;
+            color: #00b5a7;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-custom:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #00a2e8, #00b5a7);
+            color: #fff;
+        }
+
+        .input-group-text {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="container">
+            <div class="card card-custom shadow">
+                <div class="card-body">
+                  
+
+
+
+                    
+                    <div class="card-header card-header-custom">
+                        <h5><strong> Login Médico </strong></h5>
+                    </div>
+                    <form onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="crm"> CRM: </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input type="text" class="form-control" id="crm" placeholder="Informe seu CRM" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"> Senha: </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                </div>
+                                <input type="password" class="form-control" id="password" placeholder="Informe sua senha " required>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-custom btn-block"><i class="fas fa-sign-in-alt"></i> Entrar </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const crm = document.getElementById("crm").value;
+            const password = document.getElementById("password").value;
+
+            if (crm && password) {
+                window.location.href = "rota de caminho"; 
+                return false;
+            }
+        }
+    </script>
+
+</body>
+</html>
