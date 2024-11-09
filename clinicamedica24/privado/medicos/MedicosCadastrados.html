@@ -6,7 +6,7 @@
     <title>Exibir Cadastros</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Estilos personalizados */
+       
         body {
             background-color: #E8F1F2;
         }
@@ -37,7 +37,7 @@
     </div>
 
     <script>
-        // Carrega os dados do localStorage e exibe na página
+       
         function carregarCadastros() {
             const cadastroLista = document.getElementById('cadastroLista');
             const cadastros = JSON.parse(localStorage.getItem('cadastros')) || [];
@@ -60,7 +60,7 @@
             });
         }
 
-        // Chama a função para carregar os cadastros ao carregar a página
+       
         window.onload = carregarCadastros;
     </script>
 
