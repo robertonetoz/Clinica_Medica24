@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Funcionários Cadastrados </title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: url(https://e0.pxfuel.com/wallpapers/67/994/desktop-wallpaper-blue-mountains-horizon-nature.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        .container {
+            margin-top: 100px;
+        }
+
+        .card-custom {
+            background: rgba(300, 300, 300, 0.2);
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-header-custom {
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            border-bottom: none;
+            background: transparent;
+            position: relative;
+        }
+
+        .card-header-custom h5 {
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .card-header-custom h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #00b5a7;
+        }
+
+        .btn-custom {
+            border: 2px solid #00b5a7;
+            border-radius: 30px;
+            font-size: 15px;
+            height: 45px;
+            outline: none;
+            width: 100%;
+            background: linear-gradient(to right, #00a2e8, #00b5a7);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-custom:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #00a2e8, #00b5a7);
+            color: #fff;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .search-input {
+            margin-bottom: 20px;
+            width: 50%; 
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px solid #00b5a7;
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .search-input::placeholder {
+            color: #aaa;
+        }
+
+        .search-input .fa-search {
+            position: absolute;
+            left: 15px;
+            color: #fff;
+        }
+
+        .search-wrapper {
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="card card-custom shadow">
+            <div class="card-header card-header-custom">
+                <h5> Funcionários Cadastrados </h5>
+            </div>
+            <div class="card-body">
+                <div class="search-wrapper">
+                    <i class="fas fa-search"></i> 
+                    <input type="text" id="search" class="search-input" placeholder="Buscar funcionário pelo nome..." onkeyup="searchFuncionarios()">
+            
+                </div>
+
+                <div class="row" id="employee-list">
+                    <div class="col-md-4 funcionario">
+                        <div class="card card-custom">
+                            <div class="card-body">
+                                <h6> <i class="fas fa-user"> </i> <strong> Nome do Funcionário </strong> </h6>
+                                <p><i class="fas fa-id-card"></i> <strong> RG: </strong> </p>
+                                <p><i class="fas fa-id-card"></i> <strong> CPF: </strong> </p>
+                                <p><i class="fas fa-home"></i> <strong> Endereço: </strong> </p>
+                                <p><i class="fas fa-city"></i> <strong> Cidade: </strong> </p>
+                                <p><i class="fas fa-map-marker-alt"></i> <strong> Bairro: </strong> </p>
+                                <button class="btn btn-custom"><i class="fas fa-edit"></i> Editar </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-md-4 funcionario">
+                        <div class="card card-custom">
+                            <div class="card-body">
+                                <h6> <i class="fas fa-user"> </i> <strong> Nome do Funcionário </strong> </h6>
+                                <p><i class="fas fa-id-card"></i> <strong> RG: </strong> </p>
+                                <p><i class="fas fa-id-card"></i> <strong> CPF: </strong> </p>
+                                <p><i class="fas fa-home"></i> <strong> Endereço: </strong> </p>
+                                <p><i class="fas fa-city"></i> <strong> Cidade: </strong> </p>
+                                <p><i class="fas fa-map-marker-alt"></i> <strong> Bairro: </strong> </p>
+                                <button class="btn btn-custom"><i class="fas fa-edit"></i> Editar </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchFuncionarios() {
+            const input = document.getElementById('search');
+            const filter = input.value.toUpperCase();
+            const employeeList = document.getElementById('employee-list');
+            const funcionarios = employeeList.getElementsByClassName('funcionario');
+
+            for (let i = 0; i < funcionarios.length; i++) {
+                const name = funcionarios[i].getElementsByClassName('card-title')[0].textContent;
+                if (name.toUpperCase().indexOf(filter) > -1) {
+                    funcionarios[i].style.display = '';
+                } else {
+                    funcionarios[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
